@@ -1,0 +1,17 @@
+
+<script >
+    function home(){
+        const list = ["apple", 'orange', 'watermelon'];
+        list.push('banana');
+        console.log(list);
+    }
+    //const를 사용하더라도 배열과 오브젝트의 값을 변경하는것은 가능
+    //재할당 X
+    home();
+    //immutable array를 어떻게 만들지?
+    //뒤로가기, 앞으로가기 할때 데이터 갖고 있어야할때가 있음
+    const list = ["apple", 'orange', 'watermelon'];
+    list2 = [].concat(list,'banana');
+    console.log(list, list2);
+    console.log(list === list2);
+</script>
