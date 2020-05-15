@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var data = [1,2, undefined, NaN, null, ''];
+    data.forEach(function(value){
+        console.log('valueis', value);
+    });
+    //문제점은 자신이 가지고 있지 않는 상위의 값까지도 추가해서 문제가 될수가 있음
+    Array.prototype.getIndex = function(){};    //function(){}가 생김
+    //그래서 forin을 array에서 쓰면 안됨
+    for(let idx in data){
+        console.log(data[idx]+'forIn');
+    }
+    //forOf는 forin의 문제가 안일어남
+    for(let value of data){
+        console.log(value+'forOf');
+    }
+
+    var str = "hello world!!!!";
+    //배열만을 위한게 아님
+    //문자열의 공백까지도 나옴
+    for(let value of str){
+        console.log(value);
+    }
+</script>
+</html>
