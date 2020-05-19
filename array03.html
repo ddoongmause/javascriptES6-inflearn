@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let pre = [100,200,'hello', null];
+
+    let newData  = [0,1,2,3, ...pre,4];
+
+    //배열 합치기가 엄청 편해짐
+    //몇번째 자리 따지고 이런게 없어져서
+    console.log(newData);
+
+    let pre1 = [100,200,300];
+
+    function sum(a,b,c){
+        return a+b+c;
+    }
+
+    //pre1이 펼쳐지면서 나옴
+    console.log(sum.apply(null, pre1));
+    //이게 더 편함
+    console.log(sum(...pre1));
+
+    //immutable array 배열을 바꾸지 않고 새로운값으로 복사할수 있는 방법을 제공
+    //배열을 합치거나 펼쳐서 파라미터로 전달할때 유용
+
+</script>
+</html>

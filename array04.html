@@ -1,0 +1,20 @@
+<script>
+    //from
+    function addMark(){
+        let newData = [];
+        //arguments객체임 배열과 비슷한 형태로 만듬, 가변적 파라미터에서 가끔씩 씀
+        for(let i=0; i<arguments.length; i++){
+            newData.push(arguments[i]+'!');
+        }
+        console.log(newData);
+        
+        let newArray = Array.from(arguments);
+        //에러임 가짜 배열이므로
+        //let newData2 = arguments.map(function(value){
+        let newData2 = newArray.map(function(value){
+            return value + '!';
+        });
+        console.log(newData2);
+    }
+    addMark(1,2,3,4,5);
+</script>
