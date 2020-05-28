@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //보통
+    const name = "crong";
+    const age = 33;
+    const obj = {
+        name : name,
+        age : age
+    }
+    console.log(obj);
+
+    //오브젝트 리터럴
+    function getObj(){
+        const name1 = "crong",
+            getName1 = function(){
+                return name1;
+            },
+            setName1 = function(newname){
+                name1 = newname;
+            },
+            printName1 = function(){
+                console.log(name1);
+            };
+        //이름과 벨류 값이 일치 한다면
+        // return {
+        //     getName1 : getName1,
+        //     setName1 : setName1
+        // }
+        return {getName1, setName1, name1}
+    }
+var obj1 = getObj();
+console.log(obj1);
+console.log(obj1.getName1());
+
+//이렇게도 가능
+const data = {
+    name2,
+    getName(){
+
+    },
+    age
+}
+
+</script>
+</html>
