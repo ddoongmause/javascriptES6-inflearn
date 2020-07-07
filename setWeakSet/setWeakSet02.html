@@ -1,0 +1,21 @@
+<script>
+    //weakset
+    //참조를 가지고 있는 객체만 저장이 가능하다.
+    let arr = [1,2,3,4];
+    let arr2 = [5,6,7,8];
+    let obj = {arr, arr2};
+    let ws = new WeakSet();
+    ws.add(arr);
+    ws.add(arr2);
+    ws.add(obj);
+    //ws.add(111);못들어감
+    //ws.add('111');못들어감
+    //ws.add(null);못들어감
+    //ws.add(function(){});//가능 참조를 가진 객체이므로 들어감
+    
+    //객체가 널이되거나 필요가 없어지면 가비지 컬렉터가 작동함 그래서 정보가 없어짐(참조 모니터링)
+    //객체형태를 중복없이 저장하려고 할때 유용하다.
+    arr = null;
+    console.log(ws);
+    console.log(ws.has(arr), ws.has(arr2));
+</script>
