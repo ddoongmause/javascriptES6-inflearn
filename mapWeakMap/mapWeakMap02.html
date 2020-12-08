@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+    //하다 말음...하 앞에 부분 복습이 필요함
+    //WeakMap 활용
+
+    //private 하게 만들기
+    const wm = new WeakMap();
+
+    function Area(height, width){
+        wm.set(this, {height, width});
+    }
+
+    Area.prototype.getArea = function(){
+        const{height, width} = wm.get(this);
+        return height * width;
+    }
+
+    let myarea = new Area(10, 20);
+    console.log(myarea.getArea());
+    console.log(wm.has(myarea));
+    myarea = null;
+    console.log(wm);
+    console.log(wm.has(myarea));
+</script>
+</body>
+</html>
